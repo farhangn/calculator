@@ -109,7 +109,6 @@ function startCalculator(num, numIndex) {
                     displayCurrentNumber.textContent += buttons[i].value;
                 }
                 if (buttons[i].value == "del" && displayResult.textContent === "") {
-                    console.log(displayCurrentNumber.textContent.length)
                     if (displayCurrentNumber.textContent.length > 1) {
                         displayCurrentNumber.textContent = displayCurrentNumber.textContent.slice(0,-1)
                     } else {
@@ -125,9 +124,9 @@ function startCalculator(num, numIndex) {
                     currentNum = num[numIndex];
                 }
                 if (num.length > 1) {
-                    console.log(operator)
                     result = operate(operator, num[numIndex-1], num[numIndex]);
                     if (result > 9e7 || result < 9e-3) {
+                        console.log(result)
                         result = result.toExponential(2);
                     } else {
                         result = (Math.round(result*1000)/1000);
@@ -139,8 +138,7 @@ function startCalculator(num, numIndex) {
                 if (buttons[i].value == "=" && buttons[i].value != "AC" && buttons[i].value != "del") {
                     operator = "";
                     if (num > 9e7 && num !=Infinity) {
-                        console.log(parseFloat(num[0]))
-                        num = parseFloat(num[0]).toExponential(2)
+                        num = [parseFloat(num[0]).toExponential(2)];
                     }
                     displayResult.textContent = num;
                     displayCurrentNumber.textContent = "";
