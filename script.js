@@ -3,15 +3,15 @@ const display = document.querySelector("#display");
 let warningMessage = document.createElement("div");
 warningMessage.classList.add('warningMessage');
 display.appendChild(warningMessage);
-warningMessage.setAttribute('style', 'font-size: 10px; color: black; text-overflow: ellipsis; overflow: hidden; padding: 10px;')
+warningMessage.setAttribute('style', 'font-size: 10px; color: white; text-overflow: ellipsis; overflow: hidden; padding: 10px;')
 let displayCurrentNumber = document.createElement("div");
 displayCurrentNumber.classList.add('displayCurrentNumber');
 display.appendChild(displayCurrentNumber);
-displayCurrentNumber.setAttribute('style', 'font-size: 60px; color: black; text-overflow: ellipsis; overflow: hidden;')
+displayCurrentNumber.setAttribute('style', 'font-size: 60px; color: white; text-overflow: ellipsis; overflow: hidden;')
 let displayResult = document.createElement("div");
 displayResult.classList.add('displayResult');
 display.appendChild(displayResult);
-displayResult.setAttribute('style', 'font-size: 60px; color: black;')
+displayResult.setAttribute('style', 'font-size: 60px; color: white;')
 let displayOperator = document.createElement("div");
 displayOperator.classList.add('displayOperator');
 display.appendChild(displayOperator);
@@ -139,8 +139,8 @@ function startCalculator(num, numIndex) {
                 if (buttons[i].value == "=" && buttons[i].value != "AC" && buttons[i].value != "del") {
                     operator = "";
                     if (num > 9e7 && num !=Infinity) {
-                        console.log(num[0])
-                        num = num[0].toExponential(2)
+                        console.log(parseFloat(num[0]))
+                        num = parseFloat(num[0]).toExponential(2)
                     }
                     displayResult.textContent = num;
                     displayCurrentNumber.textContent = "";

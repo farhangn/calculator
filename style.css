@@ -16,6 +16,7 @@ body {
     border: 2px solid whitesmoke;
     font-family: 'Orbitron', sans-serif;
     flex-wrap: wrap;
+    color: white;
 }
 
 #buttons {
